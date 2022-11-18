@@ -1,13 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+    --background-primary: #151515;
+    --background-secondary: #202020;
+    --foreground-primary: #eeeeee;
+    --accent-primary: #c5fad5;
+    --accent-primary-transparent: #c5fad526;
+    --accent-secondary: #95eaaf;
+    --accent-secondary-transparent: #95eaaf0d;
+    --error-primary: #fdeded;
+    --error-secondary: #f06360;
+    --error-foreground: #663c00;
+    --warning: #fce77d;
+    --warning-transparent: #fce77d80;
+    --boxshadow-primary: 0 0 10px rgba(0, 0, 0, 0.5);
+    --boxshadow-secondary: 0 0 10px rgba(0, 0, 0, 0.15);
+    --border-color-primary: rgba(255, 255, 255, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+*::selection {
+    background-color: var(--accent-primary);
+    color: #151515;
+}
+
+::-webkit-scrollbar {
+    position: absolute;
+    background-color: transparent;
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent-primary);
+    width: 2px;
+    border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-secondary);
+    width: 2px;
+}
+
+html,
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--background-primary);
+    color: var(--foreground-primary);
+    overflow-x: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+    background-color: #dedede;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    color: #303030;
+}
+
+small {
+    font-size: 0.8rem;
+}
+
+svg {
+    width: 44px;
+    height: 44px;
+    stroke: var(--foreground-primary);
+    stroke-width: 1px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+input[type='checkbox'] {
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: auto;
+    cursor: pointer;
+}
+
+input[type='checkbox']:checked {
+    background-color: var(--accent-primary);
+}
+
+.errorMessage {
+    transform: translateX(-50%) scale(1) !important;
+    animation: errorGrow 0.5s ease-in-out;
+}
+
+.offScreen {
+    transform: translateX(-50%) scale(0) !important;
+}
+
+.setStrokeOnHover {
+    transition: stroke 0.15s ease;
+}
+
+.setStrokeOnHover:hover {
+    stroke: var(--accent-primary);
+}
+
+.backgroundHover,
+.backgroundHover2 {
+    transition: background-color 0.15s ease;
+}
+
+.backgroundHover:hover {
+    background-color: var(--accent-primary-transparent) !important;
+}
+.backgroundHover2:hover {
+    background-color: var(--accent-secondary-transparent);
+}
+
+.rotateOnHover {
+    transition: transform 0.15s ease;
+}
+
+.backgroundHover:hover .rotateOnHover {
+    transform: rotate(0) !important;
+}
+
+.backgroundPrimaryOnHover:hover {
+    background-color: var(--background-primary);
+}
+
+.animateGrow {
+    animation: grow 0.15s ease;
+}
+.animateFromRight {
+    animation: fromRight 0.15s ease;
+}
+.animateFromBottom {
+    animation: fromBottom 0.15s ease;
+}
+
+@keyframes errorGrow {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+@keyframes grow {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (forced-colors: active) {
+    button {
+        border: 1px solid ButtonText;
+    }
+
+    button:hover {
+        border: 1px solid Highlight;
+    }
+
+    button:active {
+        outline: 3px solid HighlightText;
+    }
+
+    button:focus {
+        outline: 3px solid Highlight;
+    }
+
+    button:disabled {
+        border: 1px solid GrayText;
+    }
+
+    svg {
+        stroke: ButtonText;
+    }
+
+    svg:hover {
+        stroke: Highlight;
+    }
 }
