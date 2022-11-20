@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'https://messaging-app-backend-production.up.railway.app/v1';
+const BASE_URL = 'https://www.api.unthrust.com/v1';
 
 export default axios.create({
     baseURL: BASE_URL,

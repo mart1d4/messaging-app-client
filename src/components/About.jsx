@@ -1,5 +1,5 @@
-import Title from '../components/Title';
-import SubTitle from '../components/SubTitle';
+import Title from './ui/Title';
+import SubTitle from './ui/SubTitle';
 
 export default function About() {
     const featureStyle = {

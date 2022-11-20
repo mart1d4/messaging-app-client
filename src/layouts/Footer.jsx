@@ -7,8 +7,6 @@ function Footer() {
         show: false
     });
 
-    const currentTheme = window.localStorage.getItem('preferredTheme');
-
     return (
         <>
             <div
@@ -24,8 +22,7 @@ function Footer() {
                 <a
                     href='mailto:contact@mart1d4.com'
                     style={{
-                        color: currentTheme === 'light' ? 'var(--foreground-primary)' : 'var(--accent-secondary)',
-                        textDecoration: 'none',
+                        color: 'var(--foreground-primary)',
                         width: 'fit-content',
                     }}
                 >
@@ -41,18 +38,18 @@ function Footer() {
                     justifyContent: 'center',
                     alignItems: 'center',
                     padding: '0.5rem 1rem',
-                    background: 'var(--accent-secondary-transparent)',
+                    background: 'var(--transparent-quaternary)',
                     border: '1px solid var(--accent-primary)',
                     borderRadius: '4px',
                     gap: '0.5rem',
                     fontWeight: '500',
-                    color: 'var(--foreground)',
+                    color: 'var(--foreground-primary)',
                     fontSize: '0.8rem',
                     cursor: 'pointer',
                     marginRight: '1rem',
                     userSelect: 'none',
                 }}
-                className='backgroundHover'
+                className='hover transparent-tertiary rotateChild'
                 onMouseEnter={() => setState(({ show: true }))}
                 onMouseLeave={() => setState(({ show: false }))}
             >
@@ -61,12 +58,13 @@ function Footer() {
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 24 24'
                     style={{
+                        display: 'inline-block',
                         width: '16px',
                         height: '16px',
                         strokeWidth: '2px',
                         transform: 'rotate(90deg)',
                     }}
-                    className='rotateOnHover'
+                    className='hover rotateLeft'
                 >
                     <polyline points='6 15 12 9 18 15' />
                 </svg>

@@ -81,7 +81,6 @@ export default function PhoneMenu() {
                     zIndex: '100',
                 }}
                 ref={menuRef}
-                className='animateFromRight'
             >
                 <ul
                     style={{
@@ -101,7 +100,6 @@ export default function PhoneMenu() {
                                     fontWeight: '300',
                                     userSelect: 'none',
                                 }}
-                                className='backgroundPrimaryOnHover'
                                 to={entry.path}
                             >
                                 {entry.label}

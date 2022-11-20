@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import SubTitle from '../components/SubTitle';
-import Title from '../components/Title';
+import SubTitle from '../ui/SubTitle';
+import Title from '../ui/Title';
 
 export default function FourOFour() {
     return (

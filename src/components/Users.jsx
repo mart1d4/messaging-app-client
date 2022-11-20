@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
-import Title from "../components/Title";
-import SubTitle from "../components/SubTitle";
+import Title from "./ui/Title";
+import SubTitle from "./ui/SubTitle";
 
 export default function About() {
     const [users, setUsers] = useState();

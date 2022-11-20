@@ -3,75 +3,63 @@
 :root {
     --background-primary: #151515;
     --background-secondary: #202020;
-    --foreground-primary: #eeeeee;
-    --accent-primary: #c5fad5;
-    --accent-primary-transparent: #c5fad526;
-    --accent-secondary: #95eaaf;
-    --accent-secondary-transparent: #95eaaf0d;
+    --foreground-primary: #ffffff;
+    --foreground-secondary: #ffffffbf;
+    --foreground-tertiary: #ffffff80;
+    --accent-primary: #2c6380;
+    --accent-secondary: #002134;
+    --accent-tertiary: #375462;
+    --transparent-primary: #2c6380bf;
+    --transparent-secondary: #2c638080;
+    --transparent-tertiary: #2c638040;
+    --transparent-quaternary: #2c63801a;
     --error-primary: #fdeded;
     --error-secondary: #f06360;
-    --error-foreground: #663c00;
-    --warning: #fce77d;
-    --warning-transparent: #fce77d80;
-    --boxshadow-primary: 0 0 10px rgba(0, 0, 0, 0.5);
-    --boxshadow-secondary: 0 0 10px rgba(0, 0, 0, 0.15);
-    --border-color-primary: rgba(255, 255, 255, 0.15);
+    --error-tertiary: #5f2120;
+    --warning-primary: #fff4e5;
+    --warning-secondary: #ffa117;
+    --warning-tertiary: #663c00;
+    --border-primary: #ffffff40;
 }
 
 * {
     margin: 0;
     padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-family: 'Roboto', sans-serif;
+    vertical-align: baseline;
+    list-style-type: none;
+    text-decoration: none;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 *::selection {
     background-color: var(--accent-primary);
-    color: #151515;
+    color: #ffffff;
 }
 
 ::-webkit-scrollbar {
-    position: absolute;
     background-color: transparent;
-    width: 3px;
+    width: 10px;
 }
-
 ::-webkit-scrollbar-thumb {
     background-color: var(--accent-primary);
-    width: 2px;
     border-radius: 100vw;
 }
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--accent-secondary);
-    width: 2px;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-        'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     background-color: var(--background-primary);
     color: var(--foreground-primary);
     overflow-x: hidden;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
-    background-color: #dedede;
-    padding: 0.2rem;
-    border-radius: 0.2rem;
-    color: #303030;
-}
-
-small {
-    font-size: 0.8rem;
 }
 
 svg {
@@ -84,138 +72,74 @@ svg {
     fill: none;
 }
 
-input[type='checkbox'] {
-    width: 0.8rem;
-    height: 0.8rem;
-    margin: auto;
-    cursor: pointer;
+.hover {
+    transition: all 0.15s ease-in-out;
 }
 
-input[type='checkbox']:checked {
-    background-color: var(--accent-primary);
+.transparent-primary:hover {
+    background-color: var(--transparent-primary) !important;
+}
+
+.transparent-secondary:hover {
+    background-color: var(--transparent-secondary) !important;
+}
+
+.transparent-tertiary:hover {
+    background-color: var(--transparent-tertiary) !important;
+}
+
+.transparent-quaternary:hover {
+    background-color: var(--transparent-quaternary) !important;
+}
+
+.accent-primary:hover {
+    fill: var(--accent-primary) !important;
+    color: var(--accent-primary) !important;
+}
+
+.background-accent-primary:hover {
+    background-color: var(--accent-primary) !important;
+}
+
+.accent-secondary:hover {
+    fill: var(--accent-secondary) !important;
+    color: var(--accent-secondary) !important;
+}
+
+.background-accent-secondary:hover {
+    background-color: var(--accent-secondary) !important;
+}
+
+.accent-tertiary:hover {
+    fill: var(--accent-tertiary) !important;
+    color: var(--accent-tertiary) !important;
+}
+
+.background-accent-tertiary:hover {
+    background-color: var(--accent-tertiary) !important;
+}
+
+.rotateChild:hover .rotateLeft {
+    transform: rotate(-0.005turn) !important;
 }
 
 .errorMessage {
     transform: translateX(-50%) scale(1) !important;
-    animation: errorGrow 0.5s ease-in-out;
+    animation: offScreenGrow 0.5s ease-in-out !important;
+    z-index: 1;
 }
 
 .offScreen {
     transform: translateX(-50%) scale(0) !important;
 }
 
-.setStrokeOnHover {
-    transition: stroke 0.15s ease;
-}
-
-.setStrokeOnHover:hover {
-    stroke: var(--accent-primary);
-}
-
-.backgroundHover,
-.backgroundHover2 {
-    transition: background-color 0.15s ease;
-}
-
-.backgroundHover:hover {
-    background-color: var(--accent-primary-transparent) !important;
-}
-.backgroundHover2:hover {
-    background-color: var(--accent-secondary-transparent);
-}
-
-.rotateOnHover {
-    transition: transform 0.15s ease;
-}
-
-.backgroundHover:hover .rotateOnHover {
-    transform: rotate(0) !important;
-}
-
-.backgroundPrimaryOnHover:hover {
-    background-color: var(--background-primary);
-}
-
-.animateGrow {
-    animation: grow 0.15s ease;
-}
-.animateFromRight {
-    animation: fromRight 0.15s ease;
-}
-.animateFromBottom {
-    animation: fromBottom 0.15s ease;
-}
-
-@keyframes errorGrow {
-    0% {
+@keyframes offScreenGrow {
+    from {
         opacity: 0;
         transform: translateX(-50%) scale(0);
     }
-    100% {
-        opacity: 1;
+    to {
         transform: translateX(-50%) scale(1);
-    }
-}
-
-@keyframes grow {
-    0% {
-        opacity: 0;
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(1);
         opacity: 1;
-    }
-}
-
-@keyframes fromBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fromRight {
-    0% {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@media (forced-colors: active) {
-    button {
-        border: 1px solid ButtonText;
-    }
-
-    button:hover {
-        border: 1px solid Highlight;
-    }
-
-    button:active {
-        outline: 3px solid HighlightText;
-    }
-
-    button:focus {
-        outline: 3px solid Highlight;
-    }
-
-    button:disabled {
-        border: 1px solid GrayText;
-    }
-
-    svg {
-        stroke: ButtonText;
-    }
-
-    svg:hover {
-        stroke: Highlight;
     }
 }

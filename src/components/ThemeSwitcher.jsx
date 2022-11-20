@@ -74,7 +74,6 @@ export default function ThemeSwitcher({ show }) {
                     padding: '5px',
                     cursor: 'default',
                 }}
-                className='animateGrow'
             >
                 <ul
                     style={{
@@ -87,7 +86,6 @@ export default function ThemeSwitcher({ show }) {
                         <li
                             key={theme}
                             style={liStyle}
-                            className='backgroundPrimaryOnHover'
                             onClick={() => changeTheme(theme)}
                         >
                             {theme}
@@ -100,7 +98,7 @@ export default function ThemeSwitcher({ show }) {
                     style={{
                         width: '80%',
                         height: '1px',
-                        background: 'var(--border-color-primary)',
+                        background: 'var(--border-primary)',
                         margin: '5px auto',
                     }}
                 ></div>
@@ -116,7 +114,6 @@ export default function ThemeSwitcher({ show }) {
                         <li
                             key={color}
                             style={liStyle}
-                            className='backgroundPrimaryOnHover'
                             onClick={() => changeColor(color)}
                         >
                             {color}
@@ -127,7 +124,7 @@ export default function ThemeSwitcher({ show }) {
             <div
                 style={{
                     width: '100%',
-                    height: '30px',
+                    height: '15px',
                     cursor: 'default',
                 }}
             >

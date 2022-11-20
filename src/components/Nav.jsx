@@ -12,7 +12,7 @@ export default function Nav() {
         fontSize: '0.9rem',
         padding: '8px 16px',
         borderRadius: '4px',
-        color: 'var(--foreground)',
+        color: 'var(--foreground-primary)',
         userSelect: 'none',
         textDecoration: 'none',
         fontWeight: '300',
@@ -41,7 +41,7 @@ export default function Nav() {
                         <Link
                             to={entry.path}
                             style={linkStyle}
-                            className='backgroundHover2'
+                            className='hover transparent-quaternary'
                         >
                             {entry.name}
                         </Link>

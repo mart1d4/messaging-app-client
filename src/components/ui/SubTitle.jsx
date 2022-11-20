@@ -4,9 +4,9 @@ export default function SubTitle({ children }) {
             style={{
                 fontSize: '0.7rem',
                 lineHeight: '0.7rem',
-                fontWeight: '200',
+                fontWeight: '400',
                 textTransform: 'uppercase',
-                opacity: '0.6',
+                color: 'var(--foreground-tertiary)',
             }}
         >
             {children}

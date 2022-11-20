@@ -23,7 +23,7 @@ export default function MainLayout() {
             <div
                 style={{
                     ...firstWrappeStyle,
-                    boxShadow: 'var(--boxshadow-primary)',
+                    boxShadow: '0px 2px 4px -1px rgb(0 0 0 / .2), 0px 4px 5px 0px rgb(0 0 0 / .14), 0px 1px 10px 0px rgb(0 0 0 / .12)',
                 }}
             >
                 <header
@@ -63,7 +63,7 @@ export default function MainLayout() {
                     style={{
                         ...secondWrappeStyle,
                         position: 'relative',
-                        borderTop: '1px solid var(--border-color-primary)'
+                        borderTop: '1px solid var(--border-primary)'
                     }}
                 >
                     <Footer />

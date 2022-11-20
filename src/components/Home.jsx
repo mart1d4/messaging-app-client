@@ -1,5 +1,5 @@
-import Title from '../components/Title';
-import SubTitle from '../components/SubTitle';
+import Title from './ui/Title';
+import SubTitle from './ui/SubTitle';
 
 export default function About() {
     const featureStyle = {
@@ -15,7 +15,7 @@ export default function About() {
         fontSize: '1.1rem',
         fontWeight: '300',
         lineWeight: '1.5rem',
-        opacity: '0.8',
+        color: 'var(--foreground-secondary)',
     }
 
     return (

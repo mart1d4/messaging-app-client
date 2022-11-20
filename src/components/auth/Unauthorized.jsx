@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import Title from '../components/Title';
-import SubTitle from '../components/SubTitle';
+import Title from '../ui/Title';
+import SubTitle from '../ui/SubTitle';
 
 export default function Unauthorized () {
     const navigate = useNavigate();

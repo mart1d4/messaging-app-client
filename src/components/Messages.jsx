@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Title from '../components/Title';
-import SubTitle from '../components/SubTitle';
+import Title from './Title';
+import SubTitle from './SubTitle';
 
 export default function About() {
     const [messages, setMessages] = useState([]);
