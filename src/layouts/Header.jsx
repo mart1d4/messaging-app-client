@@ -24,6 +24,8 @@ function Header() {
                 to='/'
                 style={{
                     display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     marginLeft: '1rem',
                 }}
             >
@@ -32,7 +34,6 @@ function Header() {
                     style={{
                         width: '48px',
                         height: '48px',
-                        stroke: 'none',
                         fill: 'var(--accent-primary)',
                     }}
                 >
@@ -45,7 +46,10 @@ function Header() {
             {auth?.user ? (
                     <Link
                         to='/dashboard'
-                        style={buttonStyle}
+                        style={{
+                            ...buttonStyle,
+                            marginRight: '1rem',
+                        }}
                         className='hover background-accent-secondary'
                     >
                         Start messaging

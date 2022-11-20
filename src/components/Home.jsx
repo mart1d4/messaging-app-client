@@ -25,8 +25,8 @@ export default function About() {
                     marginBottom: '10rem',
                 }}
             >
-                <Title>Messaging app</Title>
-                <SubTitle>Made by mart1d4</SubTitle>
+                <Title>Unthrust</Title>
+                <SubTitle>Interacting made easy</SubTitle>
             </div>
 
             <section style={featureStyle}>

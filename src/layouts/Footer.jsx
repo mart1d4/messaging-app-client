@@ -26,9 +26,9 @@ function Footer() {
                         width: 'fit-content',
                     }}
                 >
-                    contact@mart1d4.com
+                    contact@unthrust.com
                 </a>
-                <p>mart1d4 &copy; {new Date().getFullYear()} Messaging App, Inc</p>
+                <p>Unthrust &copy; {new Date().getFullYear()} Unthrust, Inc</p>
             </div>
 
             <button

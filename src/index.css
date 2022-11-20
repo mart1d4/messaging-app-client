@@ -63,13 +63,13 @@ body {
 }
 
 svg {
-    width: 44px;
-    height: 44px;
-    stroke: var(--foreground-primary);
+    width: 24px;
+    height: 24px;
+    stroke: none;
     stroke-width: 1px;
     stroke-linecap: round;
     stroke-linejoin: round;
-    fill: none;
+    fill: var(--foreground-tertiary);
 }
 
 .hover {

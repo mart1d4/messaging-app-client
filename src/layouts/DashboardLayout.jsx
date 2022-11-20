@@ -6,7 +6,7 @@ const navItems = [
     {
         path: '/dashboard',
         title: 'Dashboard',
-        icon: <path d='M6 21q-.825 0-1.412-.587Q4 19.825 4 19v-9q0-.475.213-.9.212-.425.587-.7l6-4.5q.275-.2.575-.3.3-.1.625-.1t.625.1q.3.1.575.3l6 4.5q.375.275.588.7.212.425.212.9v9q0 .825-.587 1.413Q18.825 21 18 21h-4v-7h-4v7Z'/>,
+        icon: <path d='M13 8V4q0-.425.288-.713Q13.575 3 14 3h6q.425 0 .712.287Q21 3.575 21 4v4q0 .425-.288.712Q20.425 9 20 9h-6q-.425 0-.712-.288Q13 8.425 13 8ZM3 12V4q0-.425.288-.713Q3.575 3 4 3h6q.425 0 .713.287Q11 3.575 11 4v8q0 .425-.287.712Q10.425 13 10 13H4q-.425 0-.712-.288Q3 12.425 3 12Zm10 8v-8q0-.425.288-.713Q13.575 11 14 11h6q.425 0 .712.287.288.288.288.713v8q0 .425-.288.712Q20.425 21 20 21h-6q-.425 0-.712-.288Q13 20.425 13 20ZM3 20v-4q0-.425.288-.713Q3.575 15 4 15h6q.425 0 .713.287.287.288.287.713v4q0 .425-.287.712Q10.425 21 10 21H4q-.425 0-.712-.288Q3 20.425 3 20Z'/>,
     },
     {
         path: '/dashboard/friends',
@@ -21,7 +21,7 @@ const navItems = [
     {
         path: '/dashboard/servers',
         title: 'Servers',
-        icon: <path d='M7 17q-.825 0-1.412-.587Q5 15.825 5 15V4q0-.825.588-1.413Q6.175 2 7 2h4.175q.4 0 .763.15.362.15.637.425L14 4h7q.825 0 1.413.588Q23 5.175 23 6v9q0 .825-.587 1.413Q21.825 17 21 17Zm-4 4q-.825 0-1.412-.587Q1 19.825 1 19V7q0-.425.288-.713Q1.575 6 2 6t.713.287Q3 6.575 3 7v12h16q.425 0 .712.288.288.287.288.712t-.288.712Q19.425 21 19 21Zm7.025-8h7.95q.325 0 .463-.275.137-.275-.063-.525L15.95 9.025q-.15-.2-.4-.2t-.4.2l-1.9 2.475L12.1 10q-.15-.2-.4-.2t-.4.2l-1.675 2.2q-.2.25-.063.525.138.275.463.275Z'/>,
+        icon: <path d='M1 18q-.425 0-.712-.288Q0 17.425 0 17v-.575q0-1.1 1.1-1.763Q2.2 14 4 14q.325 0 .613.025.287.025.562.075-.35.5-.513 1.075Q4.5 15.75 4.5 16.4V18Zm6 0q-.425 0-.713-.288Q6 17.425 6 17v-.6q0-1.625 1.663-2.638Q9.325 12.75 12 12.75q2.7 0 4.35 1.012Q18 14.775 18 16.4v.6q0 .425-.288.712Q17.425 18 17 18Zm12.5 0v-1.6q0-.65-.175-1.225-.175-.575-.5-1.075.275-.05.563-.075Q19.675 14 20 14q1.8 0 2.9.662 1.1.663 1.1 1.763V17q0 .425-.288.712Q23.425 18 23 18ZM4 13q-.825 0-1.412-.588Q2 11.825 2 11t.588-1.413Q3.175 9 4 9t1.412.587Q6 10.175 6 11q0 .825-.588 1.412Q4.825 13 4 13Zm16 0q-.825 0-1.413-.588Q18 11.825 18 11t.587-1.413Q19.175 9 20 9q.825 0 1.413.587Q22 10.175 22 11q0 .825-.587 1.412Q20.825 13 20 13Zm-8-1q-1.25 0-2.125-.875T9 9q0-1.25.875-2.125T12 6q1.25 0 2.125.875T15 9q0 1.25-.875 2.125T12 12Z'/>,
     },
 ];
 
@@ -45,7 +45,7 @@ export default function DashboardLayout() {
                 width: '100vw',
                 height: '100vh',
                 display: 'flex',
-                background: 'radial-gradient(circle farthest-side, #080820 50px, #050509)',
+                background: 'var(--background-primary)',
             }}
         >
             <nav
@@ -68,18 +68,26 @@ export default function DashboardLayout() {
                         transform: 'translateX(-50%)',
                     }}
                 >
-                    <Link to='/'>
+                    <Link
+                        to='/'
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            padding: 'calc(8px + 0.3rem)',
+                            borderRadius: '50%',
+                        }}
+                        className='hover transparent-quaternary'
+                    >
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
-                            viewBox='0 0 24 24'
                             style={{
-                                width: '50px',
-                                height: '50px',
-                                fill: '#554f65',
-                                stroke: '#554f65',
+                                width: '24px',
+                                height: '24px',
+                                fill: 'var(--foreground-primary)',
                             }}
                         >
-                            <path d='M2 15.8V3q0-.425.288-.713Q2.575 2 3 2h13q.425 0 .712.287Q17 2.575 17 3v9q0 .425-.288.712Q16.425 13 16 13H6l-3.15 3.15q-.225.225-.538.112Q2 16.15 2 15.8ZM7 18q-.425 0-.713-.288Q6 17.425 6 17v-2h13V6h2q.425 0 .712.287Q22 6.575 22 7v13.8q0 .35-.312.462-.313.113-.538-.112L18 18Z'/>
+                            <path d='M3.25 17.625v-1.5h17.5v1.5Zm0-4.875v-1.5h17.5v1.5Zm0-4.875v-1.5h17.5v1.5Z'/>
                         </svg>
                     </Link>
                 </div>
@@ -103,17 +111,14 @@ export default function DashboardLayout() {
                                         padding: '.8rem',
                                         borderRadius: '25%',
                                         cursor: 'pointer',
-                                        backgroundColor: url === item.path ? 'var(--accent-primary-transparent)' : 'transparent',
+                                        backgroundColor: url === item.path ? 'var(--transparent-quaternary)' : 'transparent',
                                     }}
+                                    className='hover transparent-quaternary'
                                 >
                                     <svg
                                         xmlns='http://www.w3.org/2000/svg'
-                                        viewBox='0 0 24 24'
                                         style={{
-                                            width: '22px',
-                                            height: '22px',
-                                            fill: url === item.path ? 'var(--accent-primary)' : '#554f65',
-                                            stroke: url === item.path ? 'var(--accent-primary)' : '#554f65',
+                                            fill: url === item.path ? 'var(--accent-primary)' : 'var(--foreground-tertiary)',
                                         }}
                                     >
                                         {item.icon}
@@ -135,8 +140,9 @@ export default function DashboardLayout() {
                         padding: '.3rem',
                         borderRadius: '100%',
                         cursor: 'pointer',
-                        backgroundColor: url === '/dashboard/@me' ? 'var(--accent-secondary-transparent)' : 'transparent',
+                        backgroundColor: url === '/dashboard/@me' ? 'var(--transparent-tertiary)' : 'transparent',
                     }}
+                    className='hover transparent-tertiary'
                 >
                     <Link to='/dashboard/@me' style={{display: 'flex'}}>
                         <img
@@ -182,10 +188,7 @@ export default function DashboardLayout() {
                             xmlns='http://www.w3.org/2000/svg'
                             viewBox='0 0 24 24'
                             style={{
-                                width: '22px',
-                                height: '22px',
                                 fill: 'var(--accent-primary)',
-                                stroke: 'var(--accent-primary)',
                             }}
                         >
                             {navItems.find(item => item.path === url)?.icon}
@@ -214,7 +217,7 @@ export default function DashboardLayout() {
                                 width: '200px',
                                 height: '40px',
                                 borderRadius: '5px',
-                                backgroundColor: '#151525',
+                                backgroundColor: 'var(--background-secondary)',
                             }}
                         >
                             <input
@@ -227,6 +230,7 @@ export default function DashboardLayout() {
                                     outline: 'none',
                                     padding: '0 2.5rem 0 1rem',
                                     color: 'var(--foreground-primary)',
+                                    userSelect: 'none',
                                 }}
                                 type='text'
                                 placeholder='Search'
@@ -234,41 +238,34 @@ export default function DashboardLayout() {
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 style={{
-                                    fill: 'white',
+                                    fill: 'var(--foreground-primary)',
                                     position: 'absolute',
                                     top: '50%',
                                     right: '.5rem',
-                                    width: '24px',
-                                    height: '24px',
                                     transform: 'translateY(-50%)',
                                 }}
                             >
-                                <path xmlns="http://www.w3.org/2000/svg" d="m19.475 20.15-6.25-6.25q-.75.625-1.725.975-.975.35-1.95.35-2.425 0-4.087-1.663Q3.8 11.9 3.8 9.5q0-2.4 1.663-4.063 1.662-1.662 4.062-1.662 2.4 0 4.075 1.662Q15.275 7.1 15.275 9.5q0 1.05-.375 2.025-.375.975-.975 1.65L20.2 19.45ZM9.55 14.225q1.975 0 3.35-1.362Q14.275 11.5 14.275 9.5T12.9 6.137q-1.375-1.362-3.35-1.362-2 0-3.375 1.362Q4.8 7.5 4.8 9.5t1.375 3.363q1.375 1.362 3.375 1.362Z"/>
+                                <path d='m19.475 20.15-6.25-6.25q-.75.625-1.725.975-.975.35-1.95.35-2.425 0-4.087-1.663Q3.8 11.9 3.8 9.5q0-2.4 1.663-4.063 1.662-1.662 4.062-1.662 2.4 0 4.075 1.662Q15.275 7.1 15.275 9.5q0 1.05-.375 2.025-.375.975-.975 1.65L20.2 19.45ZM9.55 14.225q1.975 0 3.35-1.362Q14.275 11.5 14.275 9.5T12.9 6.137q-1.375-1.362-3.35-1.362-2 0-3.375 1.362Q4.8 7.5 4.8 9.5t1.375 3.363q1.375 1.362 3.375 1.362Z'/>
                             </svg>
                         </div>
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
                             style={{
                                 cursor: 'pointer',
-                                width: '24px',
-                                height: '24px',
-                                stroke: 'none',
-                                fill: 'white',
+                                fill: 'var(--foreground-primary)',
                             }}
                         >
-                            <path xmlns="http://www.w3.org/2000/svg" d="M4 19v-2h2v-7q0-2.075 1.25-3.688Q8.5 4.7 10.5 4.2v-.7q0-.625.438-1.062Q11.375 2 12 2t1.062.438q.438.437.438 1.062v.7q2 .5 3.25 2.112Q18 7.925 18 10v7h2v2Zm8-7.5ZM12 22q-.825 0-1.412-.587Q10 20.825 10 20h4q0 .825-.587 1.413Q12.825 22 12 22Zm-4-5h8v-7q0-1.65-1.175-2.825Q13.65 6 12 6q-1.65 0-2.825 1.175Q8 8.35 8 10Z"/>
+                            <path d='M4.25 18.875v-1.5h2v-7.25q0-2.05 1.263-3.613Q8.775 4.95 10.75 4.5v-.7q0-.525.363-.888.362-.362.887-.362t.887.362q.363.363.363.888v.7q1.975.45 3.238 2.012 1.262 1.563 1.262 3.613v7.25h2v1.5Zm7.75-7.25ZM12 21.8q-.75 0-1.275-.525Q10.2 20.75 10.2 20h3.6q0 .75-.525 1.275-.525.525-1.275.525Zm-4.25-4.425h8.5v-7.25q0-1.775-1.238-3.013Q13.775 5.875 12 5.875T8.988 7.112Q7.75 8.35 7.75 10.125Z'/>
                         </svg>
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
                             style={{
-                                fill: 'white',
+                                fill: 'var(--foreground-primary)',
                                 cursor: 'pointer',
-                                width: '24px',
-                                height: '24px',
                             }}
                             onClick={logout}
                         >
-                            <path xmlns="http://www.w3.org/2000/svg" d="M5.4 21q-.75 0-1.275-.525Q3.6 19.95 3.6 19.2V5.3q0-.75.525-1.275Q4.65 3.5 5.4 3.5h6.725V5H5.4q-.1 0-.2.1t-.1.2v13.9q0 .1.1.2t.2.1h6.725V21Zm10.725-4.475-1.025-1.1L17.525 13h-8.4v-1.5h8.4L15.1 9.075l1.025-1.1L20.4 12.25Z"/>
+                            <path d='M5.4 21q-.75 0-1.275-.525Q3.6 19.95 3.6 19.2V5.3q0-.75.525-1.275Q4.65 3.5 5.4 3.5h6.725V5H5.4q-.1 0-.2.1t-.1.2v13.9q0 .1.1.2t.2.1h6.725V21Zm10.725-4.475-1.025-1.1L17.525 13h-8.4v-1.5h8.4L15.1 9.075l1.025-1.1L20.4 12.25Z'/>
                         </svg>
                     </div>
                 </header>
