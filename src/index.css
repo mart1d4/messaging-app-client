@@ -19,6 +19,9 @@
     --warning-primary: #fff4e5;
     --warning-secondary: #ffa117;
     --warning-tertiary: #663c00;
+    --success-primary: #edf7ed;
+    --success-secondary: #5cb660;
+    --success-tertiary: #1e4620;
     --border-primary: #ffffff40;
 }
 
@@ -55,6 +58,18 @@
     background-color: var(--accent-secondary);
 }
 
+.scrollbar::-webkit-scrollbar {
+    background-color: transparent;
+    width: 3px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--accent-primary);
+    border-radius: 100vw;
+}
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-secondary);
+}
+
 html,
 body {
     background-color: var(--background-primary);
@@ -72,8 +87,21 @@ svg {
     fill: var(--foreground-tertiary);
 }
 
+button:disabled {
+    background-color: var(--accent-tertiary) !important;
+    cursor: not-allowed !important;
+}
+
 .hover {
     transition: all 0.15s ease-in-out;
+}
+
+.background-primary:hover {
+    background-color: var(--background-primary);
+}
+
+.background-secondary:hover {
+    background-color: var(--background-secondary);
 }
 
 .transparent-primary:hover {
@@ -101,6 +129,20 @@ svg {
     background-color: var(--accent-primary) !important;
 }
 
+.inputTooltip::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -7px;
+    transform: translateY(-50%) rotate(45deg);
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: var(--background-secondary);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
 .accent-secondary:hover {
     fill: var(--accent-secondary) !important;
     color: var(--accent-secondary) !important;
@@ -123,14 +165,34 @@ svg {
     transform: rotate(-0.005turn) !important;
 }
 
+.underline:hover {
+    text-decoration: underline !important;
+    text-underline-offset: 2px;
+}
+
 .errorMessage {
     transform: translateX(-50%) scale(1) !important;
     animation: offScreenGrow 0.5s ease-in-out !important;
     z-index: 1;
 }
 
+.menu {
+    animation: grow 0.25s ease-in-out !important;
+}
+
 .offScreen {
     transform: translateX(-50%) scale(0) !important;
+}
+
+@keyframes grow {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @keyframes offScreenGrow {

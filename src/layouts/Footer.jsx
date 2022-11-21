@@ -62,6 +62,8 @@ function Footer() {
                         width: '16px',
                         height: '16px',
                         strokeWidth: '2px',
+                        fill: 'none',
+                        stroke: 'var(--foreground-primary)',
                         transform: 'rotate(90deg)',
                     }}
                     className='hover rotateLeft'

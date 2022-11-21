@@ -217,10 +217,23 @@ const Register = () => {
                                         onBlur={() => setUsernameFocus(false)}
                                     />
                                     <div
+                                        style={{
+                                            zIndex: '100',
+                                            width: 'fit-content',
+                                            maxWidth: '220px',
+                                            position: 'absolute',
+                                            top: '50%',
+                                            right: '110%',
+                                            transform: 'translateY(-50%)',
+                                            backgroundColor: 'var(--background-secondary)',
+                                            padding: '1rem',
+                                            borderRadius: '4px',
+                                            boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.2)',
+                                        }}
                                         id='uidnote'
                                         className={
                                             usernameFocus && username && !validUsername
-                                                ? 'instructions'
+                                                ? 'inputTooltip instructions'
                                                 : 'offScreen'
                                         }
                                     >
@@ -258,15 +271,44 @@ const Register = () => {
                                         onBlur={() => setPasswordFocus(false)}
                                     />
                                     <div
+                                        style={{
+                                            zIndex: '100',
+                                            width: 'fit-content',
+                                            maxWidth: '220px',
+                                            position: 'absolute',
+                                            top: '50%',
+                                            right: '110%',
+                                            transform: 'translateY(-50%)',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            flexDirection: 'column',
+                                            gap: '1rem',
+                                            backgroundColor: 'var(--background-secondary)',
+                                            padding: '1rem',
+                                            borderRadius: '4px',
+                                            boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.2)',
+                                        }}
                                         id='passwordnote'
                                         className={
                                             passwordFocus && !validPassword
-                                                ? 'instructions'
+                                                ? 'inputTooltip instructions'
                                                 : 'offScreen'
                                         }
                                     >
-                                        <p>Must have at least 8 letters</p>
-                                        <ul>
+                                        <p
+                                            style={{
+                                                fontSize: '.9rem',
+                                                color: 'var(--foreground-primary)',
+                                            }}
+                                        >
+                                            Must have at least 8 letters
+                                        </p>
+                                        <ul
+                                            style={{
+                                                fontSize: '.8rem',
+                                                color: 'var(--foreground-secondary)',
+                                            }}
+                                        >
                                             <li>Upper & lower case letters</li>
                                             <li>A symbole (#$&!)</li>
                                             <li>A longer password</li>
@@ -298,14 +340,33 @@ const Register = () => {
                                         onBlur={() => setMatchFocus(false)}
                                     />
                                     <div
+                                        style={{
+                                            zIndex: '100',
+                                            width: 'fit-content',
+                                            maxWidth: '220px',
+                                            position: 'absolute',
+                                            top: '50%',
+                                            right: '110%',
+                                            transform: 'translateY(-50%)',
+                                            backgroundColor: 'var(--background-secondary)',
+                                            padding: '1rem',
+                                            borderRadius: '4px',
+                                            boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.2)',
+                                        }}
                                         id='confirmdnote'
                                         className={
                                             matchFocus && !validMatch
-                                                ? 'instructions'
+                                                ? 'inputTooltip instructions'
                                                 : 'offScreen'
                                         }
                                     >
-                                        <p>Must match the first password input field.</p>
+                                        <p
+                                            style={{
+                                                fontSize: '.9rem',
+                                            }}
+                                        >
+                                            Must match the first password input field.
+                                        </p>
                                     </div>
                                 </div>
 
@@ -344,43 +405,27 @@ const Register = () => {
                                     width: '80%',
                                 }}
                             >
-                                <p
+                                <Link
                                     style={{
-                                        color: 'var(--foreground-secondary)',
-                                        fontSize: '0.9rem',
-                                        fontWeight: '300',
+                                        fontSize: '0.85rem',
+                                        color: 'var(--accent-primary)',
                                     }}
+                                    to='/login'
+                                    className='hover underline'
                                 >
                                     Already have an account?
-                                    <Link
-                                        style={{
-                                            color: 'var(--accent-primary)',
-                                            marginLeft: '0.5rem',
-                                        }}
-                                        to='/login'
-                                    >
-                                        Login
-                                    </Link>
-                                </p>
+                                </Link>
 
-                                <p
+                                <Link
                                     style={{
-                                        color: 'var(--foreground-secondary)',
-                                        fontSize: '0.9rem',
-                                        fontWeight: '300',
+                                        fontSize: '0.85rem',
+                                        color: 'var(--accent-primary)',
                                     }}
+                                    to='/'
+                                    className='hover underline'
                                 >
-                                    Go back
-                                    <Link
-                                        style={{
-                                            color: 'var(--accent-primary)',
-                                            marginLeft: '0.5rem',
-                                        }}
-                                        to='/'
-                                    >
-                                        home
-                                    </Link>
-                                </p>
+                                    Go back home
+                                </Link>
                             </div>
                         </form>
                     </main>)

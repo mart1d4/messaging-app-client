@@ -271,43 +271,27 @@ export default function Login() {
                             width: '80%',
                         }}
                     >
-                        <p
+                        <Link
                             style={{
-                                color: 'var(--foreground-secondary)',
-                                fontSize: '0.9rem',
-                                fontWeight: '300',
+                                fontSize: '0.85rem',
+                                color: 'var(--accent-primary)',
                             }}
+                            to='/register'
+                            className='hover underline'
                         >
                             Don't have an account?
-                            <Link
-                                style={{
-                                    color: 'var(--accent-primary)',
-                                    marginLeft: '0.5rem',
-                                }}
-                                to='/register'
-                            >
-                                Register
-                            </Link>
-                        </p>
+                        </Link>
 
-                        <p
+                        <Link
                             style={{
-                                color: 'var(--foreground-secondary)',
-                                fontSize: '0.9rem',
-                                fontWeight: '300',
+                                fontSize: '0.85rem',
+                                color: 'var(--accent-primary)',
                             }}
+                            to='/'
+                            className='hover underline'
                         >
-                            Go back
-                            <Link
-                                style={{
-                                    color: 'var(--accent-primary)',
-                                    marginLeft: '0.5rem',
-                                }}
-                                to='/'
-                            >
-                                home
-                            </Link>
-                        </p>
+                            Go back home
+                        </Link>
                     </div>
                 </form>
         </main>

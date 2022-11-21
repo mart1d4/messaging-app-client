@@ -87,6 +87,7 @@ export default function ThemeSwitcher({ show }) {
                             key={theme}
                             style={liStyle}
                             onClick={() => changeTheme(theme)}
+                            className='hover background-primary'
                         >
                             {theme}
                         </li>
@@ -115,6 +116,7 @@ export default function ThemeSwitcher({ show }) {
                             key={color}
                             style={liStyle}
                             onClick={() => changeColor(color)}
+                            className='hover background-primary'
                         >
                             {color}
                         </li>
